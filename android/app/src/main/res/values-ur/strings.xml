@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Urdu translations -->
+<resources>
+    <string name="app_name">ایگروویژن سندھ</string>
+    <string name="subtitle">سندھ کے کسانوں کے لیے\nAI سے فصل امراض کی شناخت</string>
+    <string name="result_title">تجزیے کا نتیجہ</string>
+
+    <string name="scan_instruction">فصل کا پتہ اسکین کریں</string>
+    <string name="btn_camera">📷  تصویر لیں</string>
+    <string name="btn_gallery">🖼️  گیلری سے منتخب کریں</string>
+    <string name="btn_view">دیکھیں</string>
+    <string name="btn_retry">↺  دوبارہ کوشش کریں</string>
+    <string name="supported_crops_title">14 فصلیں معاون ہیں</string>
+    <string name="supported_crops_subtitle">سیب، مکئی، ٹماٹر، آلو اور 10 مزید…</string>
+    <string name="main_disclaimer">یہ AI ٹول صرف تعلیمی اور معاونتی مقاصد کے لیے ہے۔
+یہ پیشہ ورانہ زرعی تشخیص کا متبادل نہیں ہے۔</string>
+    <string name="hackathon_badge">AgroVision Sindh by Creative Tech Brains</string>
+
+    <string name="analyzing">پتے کا تجزیہ ہو رہا ہے…</string>
+    <string name="analyzing_sub">AI ماڈل تصویر کا تجزیہ کر رہا ہے۔\nچند سیکنڈ انتظار کریں۔</string>
+    <string name="confidence_label">اعتماد کا اسکور</string>
+    <string name="advice_label">احتیاطی رہنمائی</string>
+    <string name="top_predictions_label">سرفہرست 3 پیشگوئیاں</string>
+    <string name="status_healthy">✅ پودا صحت مند ہے</string>
+    <string name="status_disease_detected">⚠ مرض شناخت ہوا</string>
+    <string name="connection_error_title">API تک رسائی ممکن نہیں</string>
+    <string name="setup_instructions_title">فوری سیٹ اپ (PC پر چلائیں):</string>
+    <string name="setup_instructions_body">1. python backend/app.py\n2. adb reverse tcp:5000 tcp:5000</string>
+
+    <string name="menu_language">زبان</string>
+    <string name="menu_lang_en">English</string>
+    <string name="menu_lang_ur">اردو (Urdu)</string>
+    <string name="menu_lang_sd">سنڌي (Sindhi)</string>
+</resources>

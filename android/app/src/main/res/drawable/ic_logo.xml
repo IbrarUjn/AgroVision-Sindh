@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AgroVision Sindh Logo: Leaf + magnifier -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Outer circle -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M60,5A55,55 0,1,1 60,115A55,55 0,1,1 60,5Z" />
+
+    <!-- Leaf body -->
+    <path
+        android:fillColor="#76FF03"
+        android:pathData="M60,25 C60,25 85,40 85,65 C85,80 75,90 60,95 C45,90 35,80 35,65 C35,40 60,25 60,25Z" />
+
+    <!-- Leaf vein (center) -->
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,30 L60,90" />
+
+    <!-- Leaf veins (left) -->
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,48 L44,58" />
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,62 L42,70" />
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,75 L45,80" />
+
+    <!-- Leaf veins (right) -->
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,48 L76,58" />
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,62 L78,70" />
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="round"
+        android:pathData="M60,75 L75,80" />
+
+</vector>

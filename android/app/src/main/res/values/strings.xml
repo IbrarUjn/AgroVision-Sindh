@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App -->
+    <string name="app_name">AgroVision Sindh</string>
+    <string name="subtitle">AI-Powered Crop Disease Detection\nfor Sindh Farmers</string>
+    <string name="result_title">Analysis Result</string>
+
+    <!-- Main Screen -->
+    <string name="scan_instruction">Scan a Crop Leaf</string>
+    <string name="btn_camera">📷  Take Photo</string>
+    <string name="btn_gallery">🖼️  Choose from Gallery</string>
+    <string name="btn_view">View</string>
+    <string name="btn_retry">↺  Retry</string>
+    <string name="supported_crops_title">14 Crops Supported</string>
+    <string name="supported_crops_subtitle">Apple, Corn, Tomato, Potato and 10 more…</string>
+    <string name="main_disclaimer">This AI tool is for educational and assistive purposes only.
+It is not a substitute for professional agricultural diagnosis.</string>
+    <string name="hackathon_badge">AgroVision Sindh by Creative Tech Brains</string>
+
+    <!-- Result Screen -->
+    <string name="analyzing">Analyzing Leaf…</string>
+    <string name="analyzing_sub">Running AI model on the image.\nThis may take a few seconds.</string>
+    <string name="confidence_label">Confidence Score</string>
+    <string name="advice_label">Preventive Guidance</string>
+    <string name="top_predictions_label">Top 3 Predictions</string>
+    <string name="status_healthy">✅ Plant is Healthy</string>
+    <string name="status_disease_detected">⚠ Disease Detected</string>
+    <string name="connection_error_title">Cannot Reach API</string>
+    <string name="setup_instructions_title">Quick Setup (run on PC first):</string>
+    <string name="setup_instructions_body">1. python backend/app.py\n2. adb reverse tcp:5000 tcp:5000</string>
+
+    <!-- Menu -->
+    <string name="menu_language">Language</string>
+    <string name="menu_lang_en">English</string>
+    <string name="menu_lang_ur">اردو (Urdu)</string>
+    <string name="menu_lang_sd">سنڌي (Sindhi)</string>
+</resources>

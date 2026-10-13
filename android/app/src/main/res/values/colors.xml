@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors -->
+    <color name="primary">#1B5E20</color>
+    <color name="primary_dark">#003300</color>
+    <color name="primary_light">#2E7D32</color>
+
+    <!-- Accent Colors -->
+    <color name="accent_green">#4CAF50</color>
+    <color name="accent_teal">#00BCD4</color>
+    <color name="accent_lime">#76FF03</color>
+
+    <!-- White variations -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_90">#E6FFFFFF</color>
+    <color name="white_80">#CCFFFFFF</color>
+    <color name="white_70">#B3FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="white_10">#1AFFFFFF</color>
+
+    <!-- Card glass effect -->
+    <color name="card_glass">#33FFFFFF</color>
+    <color name="card_glass_dark">#22FFFFFF</color>
+
+    <!-- Status Colors -->
+    <color name="color_healthy">#69F0AE</color>
+    <color name="color_healthy_bg">#1A4CAF50</color>
+    <color name="color_disease">#FF7043</color>
+    <color name="color_disease_bg">#1AFF5722</color>
+
+    <!-- Warning Colors -->
+    <color name="warning_bg">#1AFF8F00</color>
+    <color name="warning_border">#80FF8F00</color>
+    <color name="warning_text">#FFD740</color>
+
+    <!-- Error Colors -->
+    <color name="error_bg">#1AF44336</color>
+    <color name="error_border">#80F44336</color>
+
+    <!-- Disclaimer bg -->
+    <color name="disclaimer_bg">#0AFFFFFF</color>
+
+    <!-- Background gradient stops -->
+    <color name="bg_top">#0D1B0E</color>
+    <color name="bg_mid">#1B2E1C</color>
+    <color name="bg_bottom">#0A1A0B</color>
+</resources>

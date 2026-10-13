@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Launcher icon: leaf on dark green background -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Background -->
+    <path
+        android:fillColor="#1B5E20"
+        android:pathData="M0,0H108V108H0Z"/>
+    <!-- Leaf -->
+    <path
+        android:fillColor="#76FF03"
+        android:pathData="M54,18 C54,18 76,32 76,54 C76,68 67,78 54,82 C41,78 32,68 32,54 C32,32 54,18 54,18Z" />
+    <!-- Leaf center vein -->
+    <path
+        android:strokeColor="#1B5E20"
+        android:strokeWidth="2.5"
+        android:strokeLineCap="round"
+        android:pathData="M54,22 L54,80" />
+</vector>

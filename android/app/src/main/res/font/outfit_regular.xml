@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Font family declaration using Google Fonts (downloaded via Gradle).
+  Uses Outfit — a modern, clean typeface ideal for agricultural apps.
+  Falls back to system sans-serif if not available.
+-->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fontProviderAuthority="com.google.android.gms.fonts"
+    android:fontProviderPackage="com.google.android.gms"
+    android:fontProviderQuery="Outfit"
+    android:fontProviderCerts="@array/com_google_android_gms_fonts_certs"
+    app:fontProviderAuthority="com.google.android.gms.fonts"
+    app:fontProviderPackage="com.google.android.gms"
+    app:fontProviderQuery="Outfit"
+    app:fontProviderCerts="@array/com_google_android_gms_fonts_certs">
+</font-family>

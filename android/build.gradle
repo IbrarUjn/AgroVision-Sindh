@@ -1,0 +1,4 @@
+// Top-level build file for AgroVision Sindh
+plugins {
+    id 'com.android.application' version '8.7.2' apply false
+}

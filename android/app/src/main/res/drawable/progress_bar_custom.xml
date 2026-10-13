@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Custom progress bar for confidence score -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Track (background) -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="6dp" />
+            <solid android:color="#33FFFFFF" />
+        </shape>
+    </item>
+    <!-- Progress fill -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="6dp" />
+                <gradient
+                    android:type="linear"
+                    android:angle="0"
+                    android:startColor="#76FF03"
+                    android:endColor="#00E676" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>
