@@ -31,4 +31,39 @@
     <string name="menu_lang_en">English</string>
     <string name="menu_lang_ur">اردو (Urdu)</string>
     <string name="menu_lang_sd">سنڌي (Sindhi)</string>
+
+    <!-- AI Farmer Assistant (Sindhi) -->
+    <string name="btn_ask_ai">AI مددگار کان پڇو</string>
+    <string name="chat_title">هاري AI مددگار</string>
+    <string name="chat_subtitle">سنڌ زرعي ماهر</string>
+    <string name="chat_input_hint">فصل، بيماري يا علاج بابت پڇو…</string>
+    <string name="assistant_thinking">مددگار هدايت تيار ڪري رهيو آهي…</string>
+    <string name="chat_grounded_notice">جواب چڪاس ڪيل نتيجي تي ٻڌل آهن.</string>
+    <string name="menu_clear_chat">گفتگو صاف ڪريو</string>
+    <string name="chat_empty_welcome">پيارا هاري ڀاءُ! مان توهان جو ايگرو ويژن AI مددگار آهيان. سنڌ ۾ فصلن جي بيمارين، جيتن کان بچاءُ ۽ پوکيءَ بابت ڪجھ به پڇي سگھو ٿا.</string>
+    <string name="chat_empty_welcome_with_scan">مون کي اوهان جي %1$s جي اسڪين رپورٽ (%2$s) ملي چڪي آهي. علاج يا ٻوٽن جي بچاءُ بابت سوال پڇو!</string>
+
+    <!-- Suggested Question Chips -->
+    <string name="chip_what_does_it_mean">هن بيماريءَ جو مطلب ڇا آهي؟</string>
+    <string name="chip_how_to_prevent">هن کي ڦهلجڻ کان ڪيئن روڪجي؟</string>
+    <string name="chip_why_yellow">پن ڇو پيلا ٿي رهيا آهن؟</string>
+    <string name="chip_protect_healthy">صحتمند ٻوٽن کي ڪيئن بچائجي؟</string>
+    <string name="chip_next_steps">مون کي فوري طور ڇا ڪرڻ گهرجي؟</string>
+
+    <!-- Voice Interaction (Sindhi) -->
+    <string name="voice_listening">ٻڌي رهيو آهي… ڳالهايو</string>
+    <string name="voice_mic_content_desc">آواز ذريعي سوال (ڳالهايو)</string>
+    <string name="voice_cancel">رد ڪريو</string>
+    <string name="voice_stop_speaking">آواز بند ڪريو</string>
+    <string name="voice_replay">ٻيهر ٻڌو</string>
+    <string name="voice_auto_tts_on">خودڪار آواز: آن</string>
+    <string name="voice_auto_tts_off">خودڪار آواز: بند</string>
+    <string name="voice_tts_speaking_now">جواب پڙهي ٻڌايو پيو وڃي…</string>
+    <string name="voice_permission_rationale">ڳالهائي سوال پڇڻ لاءِ مائيڪروفون جي اجازت ضروري آهي.</string>
+    <string name="voice_error_permission_denied">مائيڪروفون جي اجازت رد ڪئي وئي.</string>
+    <string name="voice_error_not_available">هن ڊوائيس تي آواز جي سڃاڻپ موجود ناهي.</string>
+    <string name="voice_error_no_speech">ڪو به آواز ناهي مليو. مهرباني ڪري ٻيهر ڪوشش ڪريو.</string>
+    <string name="voice_error_general">آواز جي سڃاڻپ ۾ مسئلو: %1$s</string>
+    <string name="voice_tts_lang_not_supported">%1$s لاءِ آواز هن ڊوائيس تي موجود ناهي. لکيل جواب ڏسو.</string>
+    <string name="voice_tts_init_failed">آواز وارو نظام شروع نه ٿي سگهيو.</string>
 </resources>

@@ -174,6 +174,24 @@ public class ResultActivity extends AppCompatActivity {
                     formatClassName(result.top3.get(2).className), result.top3.get(2).confidence));
         }
 
+        // ── Ask AI Assistant Button
+        binding.btnAskAi.setOnClickListener(v -> {
+            Intent intent = new Intent(ResultActivity.this, ChatActivity.class);
+            intent.putExtra(ChatActivity.EXTRA_LANGUAGE, currentLanguage);
+            intent.putExtra(ChatActivity.EXTRA_CLASS_NAME, result.className);
+            intent.putExtra(ChatActivity.EXTRA_CROP_EN, result.cropEn);
+            intent.putExtra(ChatActivity.EXTRA_CROP_UR, result.cropUr);
+            intent.putExtra(ChatActivity.EXTRA_CROP_SD, result.cropSd);
+            intent.putExtra(ChatActivity.EXTRA_DISEASE_EN, result.diseaseEn);
+            intent.putExtra(ChatActivity.EXTRA_DISEASE_UR, result.diseaseUr);
+            intent.putExtra(ChatActivity.EXTRA_DISEASE_SD, result.diseaseSd);
+            intent.putExtra(ChatActivity.EXTRA_CONFIDENCE, result.confidence);
+            intent.putExtra(ChatActivity.EXTRA_ADVICE_EN, result.adviceEn);
+            intent.putExtra(ChatActivity.EXTRA_ADVICE_UR, result.adviceUr);
+            intent.putExtra(ChatActivity.EXTRA_ADVICE_SD, result.adviceSd);
+            startActivity(intent);
+        });
+
         // ── Entrance animation
         Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
         binding.layoutResult.startAnimation(slideUp);

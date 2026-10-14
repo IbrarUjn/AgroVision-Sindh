@@ -134,6 +134,121 @@ public class ApiClient {
         });
     }
 
+    public interface ChatCallback {
+        void onSuccess(ChatResponse chatResponse);
+        void onFailure(String errorMessage);
+    }
+
+    /**
+     * Sends a chat prompt to the AI Farmer Assistant backend endpoint (POST /chat)
+     * with multi-endpoint fallback across USB adb reverse, Wi-Fi, and Emulator.
+     */
+    public void sendChat(ChatRequest chatRequest, ChatCallback callback) {
+        com.google.gson.Gson gson = new com.google.gson.Gson();
+        String jsonPayload = gson.toJson(chatRequest);
+        tryChatCandidate(jsonPayload, 0, callback, null);
+    }
+
+    private void tryChatCandidate(String jsonPayload, int index, ChatCallback callback, String lastError) {
+        if (index >= CANDIDATE_BASE_URLS.length) {
+            callback.onFailure("Cannot reach AI Assistant backend after trying endpoints.\n" +
+                    "Last error: " + lastError + "\n\n" +
+                    "Please ensure the Flask backend is running on your PC and run:\n" +
+                    "adb reverse tcp:5000 tcp:5000");
+            return;
+        }
+
+        String baseUrl = CANDIDATE_BASE_URLS[index];
+        String chatUrl = baseUrl + "/chat";
+
+        RequestBody body = RequestBody.create(
+                jsonPayload, MediaType.parse("application/json; charset=utf-8"));
+
+        Request request = new Request.Builder()
+                .url(chatUrl)
+                .post(body)
+                .build();
+
+        httpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@androidx.annotation.NonNull Call call,
+                                  @androidx.annotation.NonNull IOException e) {
+                tryChatCandidate(jsonPayload, index + 1, callback, e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@androidx.annotation.NonNull Call call,
+                                   @androidx.annotation.NonNull Response response)
+                    throws IOException {
+                if (response.isSuccessful() && response.body() != null) {
+                    try {
+                        String respString = response.body().string();
+                        com.google.gson.Gson gson = new com.google.gson.Gson();
+                        ChatResponse chatResponse = gson.fromJson(respString, ChatResponse.class);
+                        if (chatResponse != null && "ok".equals(chatResponse.status)) {
+                            callback.onSuccess(chatResponse);
+                        } else {
+                            String err = (chatResponse != null && chatResponse.message != null)
+                                    ? chatResponse.message : "Server error";
+                            callback.onFailure(err);
+                        }
+                    } catch (Exception ex) {
+                        tryChatCandidate(jsonPayload, index + 1, callback, "Parse error: " + ex.getMessage());
+                    }
+                } else {
+                    tryChatCandidate(jsonPayload, index + 1, callback, "HTTP " + response.code());
+                }
+            }
+        });
+    }
+
+    public interface AudioCallback {
+        void onSuccess(byte[] audioBytes);
+        void onFailure(String errorMessage);
+    }
+
+    /**
+     * Fetches synthesized speech MP3 bytes from backend /tts endpoint for Urdu/Sindhi voice.
+     */
+    public void fetchTtsAudio(String text, String language, AudioCallback callback) {
+        org.json.JSONObject payload = new org.json.JSONObject();
+        try {
+            payload.put("text", text);
+            payload.put("language", language);
+        } catch (org.json.JSONException ignored) {}
+
+        tryTtsCandidate(payload.toString(), 0, callback, null);
+    }
+
+    private void tryTtsCandidate(String jsonPayload, int index, AudioCallback callback, String lastError) {
+        if (index >= CANDIDATE_BASE_URLS.length) {
+            callback.onFailure("Audio synthesis unreachable: " + (lastError != null ? lastError : "all endpoints failed"));
+            return;
+        }
+
+        String targetUrl = CANDIDATE_BASE_URLS[index] + "/tts";
+        MediaType JSON_TYPE = MediaType.parse("application/json; charset=utf-8");
+        RequestBody body = RequestBody.create(jsonPayload, JSON_TYPE);
+        Request request = new Request.Builder().url(targetUrl).post(body).build();
+
+        httpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@androidx.annotation.NonNull Call call, @androidx.annotation.NonNull IOException e) {
+                tryTtsCandidate(jsonPayload, index + 1, callback, e.getMessage());
+            }
+
+            @Override
+            public void onResponse(@androidx.annotation.NonNull Call call, @androidx.annotation.NonNull Response response) throws IOException {
+                if (response.isSuccessful() && response.body() != null) {
+                    byte[] bytes = response.body().bytes();
+                    callback.onSuccess(bytes);
+                } else {
+                    tryTtsCandidate(jsonPayload, index + 1, callback, "HTTP " + response.code());
+                }
+            }
+        });
+    }
+
     /**
      * Quick health check — returns true if the API responds.
      */

@@ -377,6 +377,23 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
+                <!-- ── Ask AI Assistant Button ──────────────────────── -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_ask_ai"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/btn_ask_ai"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_assistant"
+                    app:iconGravity="textStart"
+                    app:iconPadding="10dp"
+                    app:iconTint="@color/white"
+                    app:cornerRadius="16dp"
+                    app:backgroundTint="@color/accent_green" />
+
                 <!-- ── Disclaimer ────────────────────────────────────── -->
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"

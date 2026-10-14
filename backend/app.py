@@ -193,6 +193,91 @@ def list_classes():
     return jsonify({"classes": CLASS_NAMES, "count": len(CLASS_NAMES)})
 
 
+@app.route("/chat", methods=["POST"])
+def chat():
+    """
+    AI Farmer Assistant conversational endpoint.
+    Accepts JSON:
+    {
+      "message": str,
+      "language": "en" | "ur" | "sd",
+      "prediction_context": dict (optional),
+      "history": list of {"role": "user"|"model", "text": str} (optional)
+    }
+    """
+    data = request.get_json(silent=True) or {}
+    message = (data.get("message") or "").strip()
+    language = data.get("language") or "en"
+    prediction_context = data.get("prediction_context")
+    history = data.get("history") or []
+
+    if not message:
+        return jsonify({"status": "error", "message": "Message cannot be empty."}), 400
+
+    try:
+        from ai_assistant import ask_ai_assistant
+        result = ask_ai_assistant(
+            message=message,
+            language=language,
+            prediction_context=prediction_context,
+            history=history,
+        )
+        return jsonify({
+            "status": "ok",
+            "reply": result.get("reply"),
+            "source": result.get("source"),
+            "model": result.get("model"),
+            "api_key_configured": result.get("api_key_configured", False),
+            "disclaimer": result.get("disclaimer"),
+        })
+    except Exception as e:
+        return jsonify({
+            "status": "error",
+            "message": f"AI Assistant error: {str(e)}"
+        }), 500
+
+
+@app.route("/tts", methods=["POST"])
+def tts_stream():
+    """
+    Synthesizes and returns MP3 audio for Urdu, Sindhi, and English text.
+    Provides native cloud voice support directly to the Android app.
+    """
+    import io
+    from gtts import gTTS
+    from flask import send_file
+    import re
+
+    data = request.get_json(silent=True) or {}
+    text = (data.get("text") or "").strip()
+    language = (data.get("language") or "en").lower()
+
+    if not text:
+        return jsonify({"status": "error", "message": "Text cannot be empty."}), 400
+
+    # Clean markdown and formatting
+    clean_text = re.sub(r'(?m)^[#*\-]+\s+', '', text)
+    clean_text = re.sub(r'[*#_~`]', '', clean_text)
+    clean_text = re.sub(r'[\U00010000-\U0010ffff]', '', clean_text)
+    clean_text = re.sub(r'\s+', ' ', clean_text).strip()
+
+    # Truncate to reasonable speech length if necessary (first 600 chars)
+    if len(clean_text) > 600:
+        clean_text = clean_text[:600]
+
+    tts_lang = "ur" if language in ["ur", "sd"] else "en"
+
+    try:
+        buf = io.BytesIO()
+        tts_obj = gTTS(text=clean_text, lang=tts_lang, slow=False)
+        tts_obj.write_to_fp(buf)
+        buf.seek(0)
+        return send_file(buf, mimetype="audio/mpeg", as_attachment=False)
+    except Exception as e:
+        return jsonify({"status": "error", "message": f"TTS generation failed: {str(e)}"}), 500
+
+
+
 if __name__ == "__main__":
     print("[AgroVision] Starting Flask API on port 5000 ...")
     print("[AgroVision] Connect your Android app to: http://10.0.2.2:5000 (emulator)")

@@ -14,6 +14,7 @@ public class LanguageManager {
 
     private static final String PREFS_NAME = "agrovision_prefs";
     private static final String KEY_LANGUAGE = "selected_language";
+    private static final String KEY_AUTO_VOICE = "auto_voice_output";
     private static final String DEFAULT_LANGUAGE = "en";
 
     /** Save language preference */
@@ -26,6 +27,18 @@ public class LanguageManager {
     public static String getSavedLanguage(Context context) {
         SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return prefs.getString(KEY_LANGUAGE, DEFAULT_LANGUAGE);
+    }
+
+    /** Save auto-voice output toggle state (default: true) */
+    public static void saveAutoVoice(Context context, boolean enabled) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        prefs.edit().putBoolean(KEY_AUTO_VOICE, enabled).apply();
+    }
+
+    /** Get saved auto-voice output toggle state (default: true) */
+    public static boolean isAutoVoiceEnabled(Context context) {
+        SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        return prefs.getBoolean(KEY_AUTO_VOICE, true);
     }
 
     /**

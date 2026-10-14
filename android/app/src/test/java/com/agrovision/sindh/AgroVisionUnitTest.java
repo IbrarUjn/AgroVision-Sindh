@@ -83,4 +83,20 @@ public class AgroVisionUnitTest {
         assertEquals("فنگسائیڈ لگائیں۔", result.getAdvice("ur"));
         assertEquals("فنگيسائيڊ لڳايو۔", result.getAdvice("sd"));
     }
+
+    @Test
+    public void chatMessage_hasDistinctId() {
+        ChatMessage msg1 = new ChatMessage("Message 1", ChatMessage.TYPE_ASSISTANT);
+        ChatMessage msg2 = new ChatMessage("Message 2", ChatMessage.TYPE_ASSISTANT);
+        assertNotNull(msg1.getId());
+        assertNotNull(msg2.getId());
+        assertNotEquals(msg1.getId(), msg2.getId());
+    }
+
+    @Test
+    public void ttsManager_cleanMarkdownForSpeech_stripsMarkdownAndBullets() {
+        String input = "### Tomato Early Blight\n* Apply **copper fungicide**\n- Keep soil _dry_";
+        String cleaned = com.agrovision.sindh.voice.AgroVisionTtsManager.cleanMarkdownForSpeech(input);
+        assertEquals("Tomato Early Blight Apply copper fungicide Keep soil dry", cleaned);
+    }
 }

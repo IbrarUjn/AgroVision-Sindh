@@ -31,4 +31,39 @@
     <string name="menu_lang_en">English</string>
     <string name="menu_lang_ur">اردو (Urdu)</string>
     <string name="menu_lang_sd">سنڌي (Sindhi)</string>
+
+    <!-- AI Farmer Assistant (Urdu) -->
+    <string name="btn_ask_ai">AI معاون سے پوچھیں</string>
+    <string name="chat_title">کسان AI معاون</string>
+    <string name="chat_subtitle">سندھ زرعی مشیر</string>
+    <string name="chat_input_hint">فصل، بیماری یا علاج کے بارے میں پوچھیں…</string>
+    <string name="assistant_thinking">معاون رہنمائی تیار کر رہا ہے…</string>
+    <string name="chat_grounded_notice">جوابات موجودہ اسکین شدہ نتیجے پر مبنی ہیں۔</string>
+    <string name="menu_clear_chat">گفتگو صاف کریں</string>
+    <string name="chat_empty_welcome">محترم کسان! میں آپ کا ایگرو ویژن AI معاون ہوں۔ سندھ میں فصلوں کی بیماریوں، کیڑوں کی روک تھام اور کھیتی باڑی کے بارے میں مجھ سے کوئی بھی سوال پوچھیں۔</string>
+    <string name="chat_empty_welcome_with_scan">مجھے آپ کی %1$s کی اسکین رپورٹ (%2$s) موصول ہو چکی ہے۔ اس کے علاج یا دیگر پودوں کے بچاؤ سے متعلق سوال پوچھیں!</string>
+
+    <!-- Suggested Question Chips -->
+    <string name="chip_what_does_it_mean">اس بیماری کا کیا مطلب ہے؟</string>
+    <string name="chip_how_to_prevent">اسے پھیلنے سے کیسے روکوں؟</string>
+    <string name="chip_why_yellow">پتے پیلے کیوں پڑ رہے ہیں؟</string>
+    <string name="chip_protect_healthy">صحت مند پودوں کو کیسے بچائیں؟</string>
+    <string name="chip_next_steps">مجھے فوری طور پر کیا کرنا چاہیے؟</string>
+
+    <!-- Voice Interaction (Urdu) -->
+    <string name="voice_listening">سن رہا ہے… بولیں</string>
+    <string name="voice_mic_content_desc">آواز کے ذریعے سوال (بولیں)</string>
+    <string name="voice_cancel">منسوخ کریں</string>
+    <string name="voice_stop_speaking">آواز بند کریں</string>
+    <string name="voice_replay">دوبارہ سنیں</string>
+    <string name="voice_auto_tts_on">خودکار آواز: آن</string>
+    <string name="voice_auto_tts_off">خودکار آواز: آف</string>
+    <string name="voice_tts_speaking_now">جواب بول کر سنایا جا رہا ہے…</string>
+    <string name="voice_permission_rationale">بول کر سوال پوچھنے کے لیے مائیکروفون کی اجازت درکار ہے۔</string>
+    <string name="voice_error_permission_denied">مائیکروفون کی اجازت مسترد کر دی گئی۔</string>
+    <string name="voice_error_not_available">اس ڈیوائس پر آواز کی شناخت دستیاب نہیں ہے۔</string>
+    <string name="voice_error_no_speech">کوئی آواز موصول نہیں ہوئی۔ دوبارہ کوشش کریں۔</string>
+    <string name="voice_error_general">آواز کی شناخت میں خرابی: %1$s</string>
+    <string name="voice_tts_lang_not_supported">%1$s کے لیے آواز اس ڈیوائس پر موجود نہیں ہے۔ تحریری جواب ملاحظہ کریں۔</string>
+    <string name="voice_tts_init_failed">آواز پیدا کرنے والا نظام شروع نہیں ہو سکا۔</string>
 </resources>

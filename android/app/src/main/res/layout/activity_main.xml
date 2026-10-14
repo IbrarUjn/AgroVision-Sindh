@@ -142,7 +142,28 @@
                         app:backgroundTint="@color/accent_teal"
                         style="@style/Widget.Material3.Button.OutlinedButton"
                         app:strokeColor="@color/accent_teal"
-                        app:strokeWidth="2dp" />
+                        app:strokeWidth="2dp"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- AI Assistant Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_chat"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="@string/btn_ask_ai"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/outfit_bold"
+                        app:icon="@drawable/ic_assistant"
+                        app:iconGravity="textStart"
+                        app:iconPadding="12dp"
+                        app:cornerRadius="16dp"
+                        app:backgroundTint="@color/card_glass"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        app:strokeColor="@color/accent_lime"
+                        app:strokeWidth="1.5dp"
+                        android:textColor="@color/accent_lime"
+                        app:iconTint="@color/accent_lime" />
 
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

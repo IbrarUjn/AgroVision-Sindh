@@ -91,6 +91,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Info card — supported crops
         binding.btnSupportedCrops.setOnClickListener(v -> showSupportedCropsDialog());
+
+        // AI Assistant chat button
+        binding.btnChat.setOnClickListener(v -> {
+            animateButton(v);
+            Intent intent = new Intent(MainActivity.this, ChatActivity.class);
+            intent.putExtra(ChatActivity.EXTRA_LANGUAGE, currentLanguage);
+            startActivity(intent);
+        });
     }
 
     private void animateEntrance() {

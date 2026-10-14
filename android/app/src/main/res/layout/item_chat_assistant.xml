@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="start"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="4dp">
+
+    <LinearLayout
+        android:id="@+id/layout_assistant_bubble"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/bg_bubble_assistant"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tv_assistant_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌱 AgroVision AI Assistant"
+            android:textColor="@color/accent_lime"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <TextView
+            android:id="@+id/tv_assistant_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:lineSpacingExtra="3dp"
+            tools:text="This is Early Blight on Tomato caused by Alternaria solani. Here are preventive measures..." />
+
+        <TextView
+            android:id="@+id/tv_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="↺ Tap to retry"
+            android:textColor="@color/accent_lime"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <!-- Voice Playback Action Row -->
+        <LinearLayout
+            android:id="@+id/layout_audio_controls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="8dp"
+            android:paddingTop="4dp">
+
+            <ImageView
+                android:id="@+id/btn_speak_message"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_volume_up"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/voice_replay"
+                android:padding="3dp"
+                app:tint="@color/accent_lime" />
+
+            <TextView
+                android:id="@+id/tv_speaking_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:textColor="@color/accent_lime"
+                android:textSize="11sp"
+                android:visibility="gone"
+                android:text="@string/voice_tts_speaking_now" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

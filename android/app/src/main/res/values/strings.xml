@@ -34,4 +34,39 @@ It is not a substitute for professional agricultural diagnosis.</string>
     <string name="menu_lang_en">English</string>
     <string name="menu_lang_ur">اردو (Urdu)</string>
     <string name="menu_lang_sd">سنڌي (Sindhi)</string>
+
+    <!-- AI Farmer Assistant -->
+    <string name="btn_ask_ai">Ask AI Assistant</string>
+    <string name="chat_title">AI Farmer Assistant</string>
+    <string name="chat_subtitle">Sindh Agriculture Expert</string>
+    <string name="chat_input_hint">Ask about your crop, disease, or remedies…</string>
+    <string name="assistant_thinking">Assistant is preparing guidance…</string>
+    <string name="chat_grounded_notice">Answers are grounded in this verified scan result.</string>
+    <string name="menu_clear_chat">Clear Chat</string>
+    <string name="chat_empty_welcome">Hello Farmer! I am your AgroVision AI Assistant. Ask me anything about crop diseases, pest prevention, or farming practices in Sindh.</string>
+    <string name="chat_empty_welcome_with_scan">I have received your crop scan result for %1$s (%2$s). Ask me how to treat it, prevent spread, or protect other plants!</string>
+
+    <!-- Suggested Question Chips -->
+    <string name="chip_what_does_it_mean">What does this diagnosis mean?</string>
+    <string name="chip_how_to_prevent">How do I prevent it from spreading?</string>
+    <string name="chip_why_yellow">Why are my crop leaves turning yellow?</string>
+    <string name="chip_protect_healthy">How do I protect my healthy plants?</string>
+    <string name="chip_next_steps">What practical steps should I take next?</string>
+
+    <!-- Voice Interaction -->
+    <string name="voice_listening">Listening… Speak now</string>
+    <string name="voice_mic_content_desc">Voice input (Speak)</string>
+    <string name="voice_cancel">Cancel</string>
+    <string name="voice_stop_speaking">Stop speaking</string>
+    <string name="voice_replay">Replay audio</string>
+    <string name="voice_auto_tts_on">Auto voice: ON</string>
+    <string name="voice_auto_tts_off">Auto voice: OFF</string>
+    <string name="voice_tts_speaking_now">Speaking response aloud…</string>
+    <string name="voice_permission_rationale">Microphone permission is required for voice questions.</string>
+    <string name="voice_error_permission_denied">Microphone permission was denied.</string>
+    <string name="voice_error_not_available">Speech recognition is not available on this device.</string>
+    <string name="voice_error_no_speech">No speech detected. Please tap and try again.</string>
+    <string name="voice_error_general">Voice recognition error: %1$s</string>
+    <string name="voice_tts_lang_not_supported">Voice for %1$s is not installed on this device. Showing text response.</string>
+    <string name="voice_tts_init_failed">Speech synthesizer could not be initialized.</string>
 </resources>
